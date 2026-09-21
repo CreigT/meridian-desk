@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     const token = issueAccessToken(unlocksFor(product.slug), email);
     const response = NextResponse.json({
       demo: true,
-      url: `${store.url}/success?demo=1&product=${product.slug}`,
+      url: `/success?demo=1&product=${product.slug}`,
     });
     response.cookies.set(ACCESS_COOKIE, token, {
       httpOnly: true,
